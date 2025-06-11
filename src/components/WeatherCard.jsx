@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Thermometer,
   Droplets,
@@ -35,7 +36,12 @@ const getWeatherIcon = (iconCode) => {
 const WeatherCard = ({ weather, loading }) => {
   if (loading) {
     return (
-      <div className="rounded-2xl p-8 text-white shadow-2xl animate-pulse-subtle backdrop-blur-xl ">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="rounded-2xl p-8 text-white shadow-2xl animate-pulse-subtle backdrop-blur-xl "
+      >
         <div className="flex items-center justify-between mb-6">
           <div>
             <div className="h-8  rounded w-32 mb-2"></div>
@@ -49,25 +55,35 @@ const WeatherCard = ({ weather, loading }) => {
             <div key={i} className="h-4 rounded"></div>
           ))}
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   if (!weather) {
     return (
-      <div className=" rounded-2xl p-8 text-white shadow-2xl backdrop-blur-xl ">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className=" rounded-2xl p-8 text-white shadow-2xl backdrop-blur-xl "
+      >
         <div className="text-center">
           <Cloud className="h-16 w-16 mx-auto mb-4 opacity-50" />
           <p className="text-lg">No weather data available</p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   const WeatherIcon = getWeatherIcon(weather.icon);
 
   return (
-    <div className="rounded-2xl p-8 text-black shadow-2xl animate-fade-in backdrop-blur-xl ">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="rounded-2xl p-8 text-black shadow-2xl animate-fade-in backdrop-blur-xl "
+    >
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-2xl font-bold">{weather.name}</h2>
@@ -78,9 +94,7 @@ const WeatherCard = ({ weather, loading }) => {
 
       <div className="mb-6">
         <div className="text-5xl font-bold mb-2">{weather.temperature}°C</div>
-        <p className="text-xl text-black capitalize"> 
-          {weather.description}
-        </p>
+        <p className="text-xl text-black capitalize">{weather.description}</p>
         <p className="text-sm text-black font-semibold mt-3">
           Feels like {weather.feelsLike}°C
         </p>
@@ -104,7 +118,7 @@ const WeatherCard = ({ weather, loading }) => {
           <span className="text-sm">Visibility: {weather.visibility} km</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,9 +1,14 @@
 import React from "react";
 import { MapPin, ChevronDown } from "lucide-react";
-
+import {motion} from "framer-motion";
 const CitySelector = ({ cities, selectedCity, onCityChange, loading }) => {
   return (
-    <div className="rounded-xl p-6 shadow-lg animate-slide-up backdrop-blur-xl ">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="rounded-xl p-6 shadow-lg animate-slide-up backdrop-blur-xl "
+    >
       <div className="flex items-center space-x-2 mb-4">
         <MapPin className="size-6 text-black " />
         <h3 className="text-lg font-bold text-zinc-900">Select Location</h3>
@@ -32,7 +37,7 @@ const CitySelector = ({ cities, selectedCity, onCityChange, loading }) => {
       <p className="text-sm text-black text-center mt-2">
         Select a city to view its current weather conditions
       </p>
-    </div>
+    </motion.div>
   );
 };
 
