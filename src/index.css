@@ -1,1 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 @import "tailwindcss";
+
+/* Apply Lato font globally */
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  /* Cursor-style vibrant gradient background */
+  background: linear-gradient(135deg, 
+    #6B46C1 0%,      /* Deep purple */
+    #8B5CF6 20%,     /* Purple */
+    #A855F7 35%,     /* Bright purple */
+    #EC4899 50%,     /* Pink/magenta */
+    #F59E0B 65%,     /* Orange/yellow */
+    #84CC16 80%,     /* Lime green */
+    #10B981 100%     /* Emerald green */
+  );
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optional: Add subtle texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(0,0,0,0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}

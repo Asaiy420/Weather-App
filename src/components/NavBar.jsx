@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
@@ -13,18 +13,18 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center ">
-            <Link to="/" className="text-xl font-bold text-gray-800">
+            <Link to="/" className="text-xl font-bold text-black">
               Weather App
             </Link>
           </div>
-          
+
           <div className="flex space-x-4">
             <Link
               to="/"
-              className={`px-3 py-2 rounded-md text-sm font-medium ${
-                isActive('/') 
-                  ? 'bg-blue-500 text-white' 
-                  : 'text-gray-600 hover:bg-gray-100'
+              className={`px-3 py-2 rounded-md text-sm font-medium  ${
+                isActive("/")
+                  ? "bg-blue-500 text-white"
+                  : "text-black hover:bg-gray-100"
               }`}
             >
               Home
@@ -32,9 +32,9 @@ const Navbar = () => {
             <Link
               to="/about"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                isActive('/about') 
-                  ? 'bg-blue-500 text-white' 
-                  : 'text-gray-600 hover:bg-gray-100'
+                isActive("/about")
+                  ? "bg-blue-500 text-white"
+                  : "text-black hover:bg-gray-100"
               }`}
             >
               About
@@ -42,9 +42,9 @@ const Navbar = () => {
             <Link
               to="/contact"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
-                isActive('/contact') 
-                  ? 'bg-blue-500 text-white' 
-                  : 'text-gray-600 hover:bg-gray-100'
+                isActive("/contact")
+                  ? "bg-blue-500 text-white"
+                  : "text-black hover:bg-gray-100"
               }`}
             >
               Contact
