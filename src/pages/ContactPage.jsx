@@ -1,36 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+
+    console.log("Form submitted:", formData);
+    alert("Thank you for your message! We will get back to you soon.");
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-black mb-6 text-center">Contact Us</h1>
-      
-      <div className="bg-bg-linear-to-r/increasing from-indigo-500 to-teal-400 rounded-lg shadow-md p-6">
+      <h1 className="text-4xl font-bold text-black mb-6 text-center">
+        Contact Us
+      </h1>
+
+      <div className="bg-bg-linear-to-r/increasing from-indigo-500 to-teal-400 rounded-lg shadow-md p-6 bg-white/80">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-black">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-black"
+            >
               Name
             </label>
             <input
@@ -45,7 +50,10 @@ const ContactPage = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-black">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-black"
+            >
               Email
             </label>
             <input
@@ -60,7 +68,10 @@ const ContactPage = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-black">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-black"
+            >
               Message
             </label>
             <textarea

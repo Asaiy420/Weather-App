@@ -8,10 +8,7 @@ import ContactPage from "./pages/ContactPage";
 const App = () => {
   return (
     <div className="min-h-screen relative">
-      {/* Global background gradient */}
-      <div className="fixed inset-0 bg-gradient-radial from-blue-600/10 via-purple-600/5 to-transparent pointer-events-none z-[-2]" />
-      {/* Overlay for content readability */}
-      <div className="fixed inset-0 bg-black/40 pointer-events-none z-[-1]" />
+      {/* Removed fixed background and overlay to allow animated circles from index.css to show */}
       <Navbar />
       <main className="container mx-auto px-4 py-8">
         <Routes>

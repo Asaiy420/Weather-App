@@ -82,40 +82,40 @@ const WeatherCard = ({ weather, loading }) => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="rounded-2xl p-8 text-black shadow-2xl animate-fade-in backdrop-blur-xl "
+      className="rounded-2xl p-8 text-black shadow-2xl animate-fade-in backdrop-blur-xl bg-blend-luminosity "
     >
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-2xl font-bold">{weather.name}</h2>
-          <p className="text-black font-bold">{weather.country}</p>
+          <p className="text-white font-bold">{weather.country}</p>
         </div>
-        <WeatherIcon className="h-16 w-16 opacity-80" />
+        <WeatherIcon className="h-16 w-16 opacity-80 text-white" />
       </div>
 
       <div className="mb-6">
-        <div className="text-5xl font-bold mb-2">{weather.temperature}°C</div>
-        <p className="text-xl text-black capitalize">{weather.description}</p>
-        <p className="text-sm text-black font-semibold mt-3">
+        <div className="text-5xl font-bold mb-2 text-white">{weather.temperature}°C</div>
+        <p className="text-xl text-white capitalize">{weather.description}</p>
+        <p className="text-sm text-white font-semibold mt-3">
           Feels like {weather.feelsLike}°C
         </p>
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div className="flex items-center space-x-2">
-          <Droplets className="h-4 w-4" />
-          <span className="text-sm">Humidity: {weather.humidity}%</span>
+          <Droplets className="h-4 w-4 text-white" />
+          <span className="text-sm text-white">Humidity: {weather.humidity}%</span>
         </div>
         <div className="flex items-center space-x-2">
-          <Wind className="h-4 w-4" />
-          <span className="text-sm">Wind: {weather.windSpeed} km/h</span>
+          <Wind className="h-4 w-4 text-white" />
+          <span className="text-sm text-white">Wind: {weather.windSpeed} km/h</span>
         </div>
         <div className="flex items-center space-x-2">
-          <Gauge className="size-4" />
-          <span className="text-sm">Pressure: {weather.pressure} hPa</span>
+          <Gauge className="size-4 text-white" />
+          <span className="text-sm text-white">Pressure: {weather.pressure} hPa</span>
         </div>
         <div className="flex items-center space-x-2">
-          <Eye className="size-4" />
-          <span className="text-sm">Visibility: {weather.visibility} km</span>
+          <Eye className="size-4 text-white" />
+          <span className="text-sm text-white">Visibility: {weather.visibility} km</span>
         </div>
       </div>
     </motion.div>

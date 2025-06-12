@@ -71,15 +71,15 @@ const Home = () => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="rounded-xl p-6 shadow-lg animate-slide-up backdrop-blur-xl "
+      className="rounded-xl p-6 shadow-lg animate-slide-up backdrop-blur-xl"
     >
       <div className="min-h-screen">
         <div className="max-w-6xl mx-auto px-4 py-8">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-black mb-2">
+            <h1 className="text-4xl font-bold text-white mb-2">
               Weather Forecast
             </h1>
-            <p className="text-zinc-900 text-lg">
+            <p className="text-white/40 text-lg">
               Stay updated with real-time weather information
             </p>
           </div>
@@ -104,26 +104,26 @@ const Home = () => {
                 loading={loading}
               />
 
-              <div className="rounded-xl p-6 shadow-lg backdrop-blur-xl ">
-                <h3 className="text-lg font-semibold text-zinc-950 mb-3">
+              <div className="rounded-xl p-6 shadow-lg backdrop-blur-xl bg-zinc/80">
+                <h3 className="text-lg font-semibold text-white mb-3">
                   Quick Stats
                 </h3>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-zinc-950">Cities Available:</span>
-                    <span className="font-medium text-black">
+                    <span className="text-white">Cities Available:</span>
+                    <span className="font-medium text-white">
                       {cities.length}
                     </span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-zinc-950">Last Updated:</span>
-                    <span className="font-medium text-zinc-950">
+                    <span className="text-white">Last Updated:</span>
+                    <span className="font-medium text-white">
                       {new Date().toLocaleTimeString()}
                     </span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-zinc-950">Weather Source:</span>
-                    <span className="font-medium text-zinc-950">
+                    <span className="text-white">Weather Source:</span>
+                    <span className="font-medium text-white">
                       Open Weather API
                     </span>
                   </div>

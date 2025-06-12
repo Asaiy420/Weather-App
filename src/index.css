@@ -6,43 +6,139 @@ body {
   font-family: "Lato", sans-serif;
   margin: 0;
   min-height: 100vh;
-  /* Cursor-style vibrant gradient background */
-  background: linear-gradient(135deg, 
-    #6B46C1 0%,      /* Deep purple */
-    #8B5CF6 20%,     /* Purple */
-    #A855F7 35%,     /* Bright purple */
-    #EC4899 50%,     /* Pink/magenta */
-    #F59E0B 65%,     /* Orange/yellow */
-    #84CC16 80%,     /* Lime green */
-    #10B981 100%     /* Emerald green */
-  );
-  background-size: 400% 400%;
-  background-attachment: fixed;
-  animation: gradientShift 10s ease infinite;
+  background: #0f0f23;
+  overflow-x: hidden;
+  position: relative;
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Optional: Add subtle texture overlay */
+/* Animated colorful circles background */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
-              radial-gradient(circle at 75% 75%, rgba(0,0,0,0.1) 0%, transparent 50%);
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: -1;
+  background-image: radial-gradient(
+      circle 60px at 10% 20%,
+      #6b46c1 0%,
+      #8b5cf6 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 40px at 20% 60%,
+      #8b5cf6 0%,
+      #a855f7 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 75px at 30% 80%,
+      #a855f7 0%,
+      #ec4899 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 50px at 40% 10%,
+      #ec4899 0%,
+      #f59e0b 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 30px at 50% 40%,
+      #ec4899 0%,
+      #a855f7 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 100px at 60% 50%,
+      #f59e0b 0%,
+      #84cc16 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 45px at 70% 30%,
+      #f59e0b 0%,
+      #ec4899 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 55px at 80% 70%,
+      #84cc16 0%,
+      #10b981 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 35px at 90% 15%,
+      #10b981 0%,
+      #6b46c1 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 80px at 95% 90%,
+      #10b981 0%,
+      #84cc16 50%,
+      transparent 70%
+    );
+  animation: moveCircles 10s ease-in infinite,
+    pulseCircles 8s ease-in-out infinite;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  background-image: radial-gradient(
+      circle 70px at 15% 25%,
+      rgba(139, 92, 246, 0.6) 0%,
+      rgba(168, 85, 247, 0.4) 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 90px at 25% 65%,
+      rgba(236, 72, 153, 0.5) 0%,
+      rgba(245, 158, 11, 0.3) 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 50px at 35% 85%,
+      rgba(132, 204, 22, 0.6) 0%,
+      rgba(16, 185, 129, 0.4) 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      circle 60px at 45% 45%,
+      rgba(16, 185, 129, 0.5) 0%,
+      rgba(107, 70, 193, 0.3) 50%,
+      transparent 70%
+    );
+  animation: moveCircles 15s linear infinite reverse,
+    pulseCircles 6s ease-in-out infinite;
+}
+
+@keyframes moveCircles {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes pulseCircles {
+  0%,
+  100% {
+    opacity: 0.7;
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(0px);
+  }
 }
