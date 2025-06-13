@@ -10,9 +10,7 @@ import {
   saveUserPreferences,
   getUserPreferences,
   getDefaultPreferences,
-} from "../utils/localStorage";
-
-import { motion } from "framer-motion";
+} from "../utils/localstorage";
 
 const Home = () => {
   const [weather, setWeather] = useState(null);
