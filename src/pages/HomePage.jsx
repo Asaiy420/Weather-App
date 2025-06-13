@@ -12,6 +12,8 @@ import {
   getDefaultPreferences,
 } from "../utils/localstorage";
 
+import { motion } from "framer-motion"
+
 const Home = () => {
   const [weather, setWeather] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
