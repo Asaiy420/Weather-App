@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Thermometer,
   Droplets,
@@ -36,12 +35,7 @@ const getWeatherIcon = (iconCode) => {
 const WeatherCard = ({ weather, loading }) => {
   if (loading) {
     return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="rounded-2xl p-8 text-white shadow-2xl animate-pulse-subtle backdrop-blur-xl "
-      >
+      <div>
         <div className="flex items-center justify-between mb-6">
           <div>
             <div className="h-8  rounded w-32 mb-2"></div>
@@ -55,35 +49,25 @@ const WeatherCard = ({ weather, loading }) => {
             <div key={i} className="h-4 rounded"></div>
           ))}
         </div>
-      </motion.div>
+      </div>
     );
   }
 
   if (!weather) {
     return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className=" rounded-2xl p-8 text-white shadow-2xl backdrop-blur-xl "
-      >
+      <div>
         <div className="text-center">
           <Cloud className="h-16 w-16 mx-auto mb-4 opacity-50" />
           <p className="text-lg">No weather data available</p>
         </div>
-      </motion.div>
+      </div>
     );
   }
 
   const WeatherIcon = getWeatherIcon(weather.icon);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className="rounded-2xl p-8 text-black shadow-2xl animate-fade-in backdrop-blur-xl bg-blend-luminosity "
-    >
+    <div>
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-2xl font-bold">{weather.name}</h2>
@@ -93,7 +77,9 @@ const WeatherCard = ({ weather, loading }) => {
       </div>
 
       <div className="mb-6">
-        <div className="text-5xl font-bold mb-2 text-white">{weather.temperature}°C</div>
+        <div className="text-5xl font-bold mb-2 text-white">
+          {weather.temperature}°C
+        </div>
         <p className="text-xl text-white capitalize">{weather.description}</p>
         <p className="text-sm text-white font-semibold mt-3">
           Feels like {weather.feelsLike}°C
@@ -103,22 +89,30 @@ const WeatherCard = ({ weather, loading }) => {
       <div className="grid grid-cols-2 gap-4">
         <div className="flex items-center space-x-2">
           <Droplets className="h-4 w-4 text-white" />
-          <span className="text-sm text-white">Humidity: {weather.humidity}%</span>
+          <span className="text-sm text-white">
+            Humidity: {weather.humidity}%
+          </span>
         </div>
         <div className="flex items-center space-x-2">
           <Wind className="h-4 w-4 text-white" />
-          <span className="text-sm text-white">Wind: {weather.windSpeed} km/h</span>
+          <span className="text-sm text-white">
+            Wind: {weather.windSpeed} km/h
+          </span>
         </div>
         <div className="flex items-center space-x-2">
           <Gauge className="size-4 text-white" />
-          <span className="text-sm text-white">Pressure: {weather.pressure} hPa</span>
+          <span className="text-sm text-white">
+            Pressure: {weather.pressure} hPa
+          </span>
         </div>
         <div className="flex items-center space-x-2">
           <Eye className="size-4 text-white" />
-          <span className="text-sm text-white">Visibility: {weather.visibility} km</span>
+          <span className="text-sm text-white">
+            Visibility: {weather.visibility} km
+          </span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
