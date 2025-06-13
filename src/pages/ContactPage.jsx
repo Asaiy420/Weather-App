@@ -25,16 +25,16 @@ const ContactPage = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold text-black mb-6 text-center">
+      <h1 className="text-4xl font-bold text-white mb-6 text-center">
         Contact Us
       </h1>
 
-      <div className="bg-bg-linear-to-r/increasing from-indigo-500 to-teal-400 rounded-lg shadow-md p-6 bg-white/80">
+      <div className=" rounded-lg shadow-md p-6 bg-overlay">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-black"
+              className="block text-sm font-medium text-white"
             >
               Name
             </label>
@@ -52,7 +52,7 @@ const ContactPage = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-black"
+              className="block text-sm font-medium text-white"
             >
               Email
             </label>
@@ -70,7 +70,7 @@ const ContactPage = () => {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-black"
+              className="block text-sm font-medium text-white"
             >
               Message
             </label>
@@ -87,7 +87,7 @@ const ContactPage = () => {
 
           <button
             type="submit"
-            className="w-full bg-zinc-900 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="w-full bg-blue-900 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Send Message
           </button>
